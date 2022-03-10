@@ -2,12 +2,14 @@
 
 int cbinsearch(int* arr, int size, int value) {
   int current = size - 1;
+  int step = size;
   int result = 0;
   while (true) {
+    step = step >> 1;
     if (value < arr[current]) {
-      current = current >> 1;
+      current -= step;
     } else if (value > arr[current]) {
-      current += current >> 1;
+      current += step;
     } else if (value == arr[current]) {
       for (; value == arr[current]; current++) {}
       current--;
