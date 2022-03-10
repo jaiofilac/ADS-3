@@ -17,8 +17,9 @@ int cbinsearch(int* arr, int size, int value) {
         result++;
       }
       break;
-    } else if (current == 0)
+    } else if (current == 0) {
       break;
+    }
   }
   return result; 
 }
